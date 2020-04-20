@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/main.css}" />
+
+<title>BAHAMUT</title>
+</head>
+<body>
+
+	<header th:replace="fragments/header :: cabecalho">
+		<div>header</div>
+	</header>
+
+	<div class="layout-main">
+		
+		<footer th:replace="fragments/footer :: rodape">
+			<div>footer</div>
+		</footer>
+	</div>
+
+	<!-- include javascript -->
+	<script type="text/javascript"
+		src="webjars/jquery/3.5.0/jquery.min.js/"></script>
+	<script type="text/javascript"
+		src="webjars/popper/2.0.2/jquery.min.js/"></script>
+	<script type="text/javascript"
+		src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+
+
+	<script type="text/javascript">
+		$(function() {
+			$('[data-toogle="popover"]').popover();
+		});
+		$(document).ready(function() {
+			$(".nav.bar-toogle").click(function() {
+				$(".sidebar").toogleClass("sidebar-open");
+			})
+		});
+	</script>
+
+
+</body>
+
+<!-- Core Javascript -->
+
+
+
+</html>

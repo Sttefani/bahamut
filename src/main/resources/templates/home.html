@@ -1,0 +1,46 @@
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}"></link>
+<link rel="stylesheet" th:href="@{/css/home.css}"></link>
+
+
+<title>BAHAMUT</title>  
+</head>
+
+<header th:replace="fragments/header :: cabecalho"></header>
+<body>
+<div id="conteudo">
+
+	   
+
+	</div>
+
+	<div id="menu">
+	
+		
+	  	  <h4>Menu</h4>
+	   	
+	  <ul>
+	  
+		<li><a th:href="@{/unidades}">Cadastro de unidade</a></li>
+		<li><a href="@{/autoridades}">Cadastro de autoridade</a></li>
+		<li><a href="@{/peritos}">Cadastro de perito</a></li>
+		<li><a href="@{/municipios}">Cadastro de município</a></li>
+		<li><a href="@{/codigos_ocorrencia}">Cadastro de código de gênero ocorrência</a></li>
+		<li><a href="@{/subcodigos_ocorrencia}">Cadastro de subcódigo de espécie ocorrência</a></li>
+		<li><a href="@{/correncias}">Cadastro de ocorrência</a></li>
+		<li><a href="@{/historico_ocorrencias}">Histórico de ocorrência</a></li>
+		<li><a href="@{/usuarios}">Cadastro de usuários</a></li>
+	  </ul>
+	</div>
+<script type="text/javascript" src="webjars/jquery/3.5.0/jquery.min.js/"></script>
+<script type="text/javascript" src="webjars/popper/2.0.2/jquery.min.js/"></script>
+<script type="text/javascript" src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+
+<footer th:replace="fragments/footer :: rodape">
+		
+</footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" />
+
+
+<title>BAHAMUT</title>
+</head>
+<body>
+
+	<header th:replace="fragments/header :: cabecalho">
+		<div>header</div>
+	</header>
+
+
+	<div class="table-responsive  bw-tabela-simples">
+
+		<h3 th:text="${titulo}"></h3>
+		<table class="table  table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Email</th>
+					<th scope="col">Celular Institucional</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="unidade : ${unidadesLista}">
+					<th th:text="*{id}"></th>
+					<td th:text="*{nome}"></td>
+					<td th:text="*{email}"></td>
+					<td th:text="*{celularInstitucional}"></td>
+					
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+
+	<footer th:replace="fragments/footer :: rodape">
+		<div>footer</div>
+	</footer>
+
+
+
+
+
+
+	<!-- include javascript -->
+	<script type="text/javascript"
+		src="webjars/jquery/3.5.0/jquery.min.js/"></script>
+	<script type="text/javascript"
+		src="webjars/popper/2.0.2/jquery.min.js/"></script>
+	<script type="text/javascript"
+		src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+
+
+	<script type="text/javascript">
+	jQuery("input.telefone")
+    .mask("(99) 9999-9999?9")
+    .focusout(function (event) {  
+        var target, phone, element;  
+        target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+        phone = target.value.replace(/\D/g, '');
+        element = $(target);  
+        element.unmask();  
+        if(phone.length > 10) {  
+            element.mask("(99) 99999-999?9");  
+        } else {  
+            element.mask("(99) 9999-9999?9");  
+        }  
+    });
+	</script>
+
+
+</body>
+
+<!-- Core Javascript -->
+
+
+
+</html>

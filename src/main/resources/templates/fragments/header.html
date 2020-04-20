@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<link type="text/css"
+	th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" />
+</head>
+<body>
+	<header th:fragment="cabecalho">
+
+		<nav
+			class="navbar navbar-expand-lg navbar-dark bg-dark text-dark py-3 main-nav">
+			<img th:src="@{/img/logo.png}" alt="logo" width="120" height="130">
+			<div class="container">
+
+				<a class="navbar-brand" th:href="@{/home}">
+					<h2>BAHAMUT - Módulo de Gerenciamento de Informações</h2>
+				</a> 
+				<img th:src="@{/img/pc.png}" alt="logo" width="120" height="130">
+			</div>
+
+			<form th:action="@{/logout}" method="post"
+				class="form-inline mt-2 mt-md-0">
+				<div class="btn-group mb-2 mr-sm-2">
+
+					<button style="bottom: 10; align: right;" type="submit"
+						class="btn btn-primary">Sair</button>
+				</div>
+
+
+			</form>
+		</nav>
+
+
+	</header>
+	<!-- include javascript -->
+	<script type="text/javascript"
+		src="webjars/jquery/3.5.0/jquery.min.js/"></script>
+	<script type="text/javascript"
+		src="webjars/popper/2.0.2/jquery.min.js/"></script>
+	<script type="text/javascript"
+		src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

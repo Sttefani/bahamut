@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>BAHAMUT ::: Login</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="módulo de gerenciamento" />
+
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+<style>
+
+</style>
+
+</head>
+<body>
+	<form class="form-signin was-validated" method="post" 
+		th:action="@{/login}">
+		<div class="text-center mb-4">
+			<img class="mb-4" th:src="@{/img/pc.png}" alt="pc"
+				width="152" height="172">
+			<h1 class="h3 mb-3 font-weight-normal">BAHAMUT - Módulo de Gestão Policial</h1>
+
+			<p class="font-weight-lighter">Seja bem-vindo.</p>
+			<p class="text-muted">Realize seu login para continuar</p>					
+			<div th:if="${alerta != null}" th:class="${alerta == 'erro'} ? 'alert alert-danger' : 'alert alert-success'"
+				 role="alert">
+			  <h4 th:text="${titulo}" class="alert-heading">Credenciais...</h4>
+			  <p th:text="${texto}">Login ou senha incorretos...</p>
+			  <hr>
+			  <p class="mb-0"><small th:text="${subtexto}">Acesso permitido...</small></p>
+			</div>
+		</div>
+
+		<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+        <div class="card text-center card  bg-default mb-3">
+          <div class="card-header">
+            LOGIN
+          </div>
+          <div class="card-body">
+               <input type="text" id="inputEmail" name="username" class="form-control" placeholder="E-mail" />
+            <hr>
+            <input type="password" id="inputPassword" name="password" class="form-control input-sm chat-input" placeholder="Senha" />
+          </div>
+          <div class="card-footer text-muted">
+           <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+          </div>
+        </div>
+    </div>
+    </div>
+</div>
+		<hr>
+		
+	</form>
+	<footer th:replace="fragments/footer :: rodape">
+		<div>footer</div>
+	</footer>
+	
+	<!-- include javascript -->
+<script type="text/javascript" src="webjars/jquery/3.5.0/jquery.min.js/"></script>
+<script type="text/javascript" src="webjars/popper/2.0.2/jquery.min.js/"></script>
+<script type="text/javascript" src="webjars/bootstrap/4.4.1-1/js/bootstrap.min.js"></script>
+</body>
+</html>
